@@ -49,7 +49,7 @@
             "cloudwatchLogsEnabled": true,
             "envVariables": {}
           },
-          "healthCheckPath": "/up",
+          "healthCheckPath": "/",
           "port": 3000,
           "stickySessionsEnabled": false,
           "stickySessionsDurationSecs": 86400,
