@@ -2,15 +2,38 @@
 <html>
   <head>
     <title>CeoSummitPlatform</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">CeoSummitPlatform</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            <li class="nav-item"><a class="nav-link btn btn-primary text-white" href="#">My Account</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <%= yield %>
+
+    <footer class="bg-dark text-white mt-5 p-4 text-center">
+      <p>&copy; <%= Time.current.year %> CeoSummitPlatform. All Rights Reserved.</p>
+    </footer>
+
   </body>
 </html>

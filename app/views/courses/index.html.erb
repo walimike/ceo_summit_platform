@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2>Available Courses</h2>
+    <select class="form-select w-auto">
+      <option>Release Date (newest first)</option>
+      <option>Price (low to high)</option>
+      <option>Price (high to low)</option>
+    </select>
+  </div>
+
+  <div class="row mt-4">
+    <% @courses.each do |course| %>
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img src="<%= asset_path course[:image] %>" class="card-img-top" alt="<%= course[:title] %>">
+          <div class="card-body">
+            <h5 class="card-title"><%= course[:title] %></h5>
+            <p class="text-muted"><%= course[:duration] %> - By <%= course[:instructor] %> in <%= course[:category] %></p>
+            <p class="fw-bold"><%= course[:price] %></p>
+            <a href="#" class="btn btn-primary">Purchase</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<%= link_to "New course", new_course_path %>
